@@ -1,0 +1,95 @@
+/* Reset and setep */
+
+*, *::before, *::after
+{
+    box-sizing: border-box;
+    margin: 0px 2px;
+    padding: 0;
+}
+
+/* Header layout */
+.site-header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #46166b;
+    color: #ffffff;
+    padding: 0.75rem 1rem;
+    position: sticky;
+    top: 0;
+}
+
+/* Logo styling */
+.logo
+{
+    color: var(--text);
+    text-decoration: none;
+    font-weight: bold;
+}
+ /* Navigation links */
+ .site-nav ul
+ {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+ }
+
+ .site-nav a
+ {
+    text-decoration: none;
+    color: var(--text);
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    transition: background 0.3s;
+ }
+
+/* Hover and active link styles */
+.site-nav a:hover,
+.site-nav a.active
+{
+    background: var(--primary);
+    color: #000;
+}
+
+
+/* Hide the menu checkbox by default */
+.menu-toggle {
+    display: none;
+}
+
+/* Hamburger Button */
+.menu-btn {
+    display: none;
+    font-size: 2rem;
+    color: var(--text);
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    /* Show menu on small screens*/
+    .menu-btn {
+        display: block;
+    }
+    /*Stack vertically*/
+    .site-nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #111624;
+        width: 200px;
+        padding: 1rem;
+        border-radius: 8px;
+        display: none;
+    }
+    /*When checkbox is checked, show menu*/
+    .menu-toggled:checked + .menu-btn + .site-nav ul {
+        display: flex;
+    }
+
+}
+
+
